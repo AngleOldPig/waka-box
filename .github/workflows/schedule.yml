@@ -5,6 +5,9 @@ on:
   push:
     branches: 
       - master
+  pull_request:
+    branches:
+      - master
 jobs:
   update-gist:
     runs-on: ubuntu-latest
