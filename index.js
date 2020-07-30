@@ -30,11 +30,12 @@ async function updateGist(stats) {
     const data = stats.data.languages[i];
     const { name, percent, text: time } = data;
 
+    // 需要更改输出长度，避免显示不全
     const line = [
       name.padEnd(11),
       time
-        .replace(/hrs/g, "h")
-        .replace(/mins/g, "m")
+        .replace("/hrs/g", "h")
+        .replace("/mins/g", "m")
         .padEnd(9),
       generateBarChart(percent, 16),
       String(percent.toFixed(1)).padStart(5) + "%"
